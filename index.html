@@ -412,7 +412,7 @@
                 correct_capitalized_small_letter_format_of_medicine_name=correct_capitalized_small_letter_format_of_medicine_name.charAt(0).toUpperCase() + correct_capitalized_small_letter_format_of_medicine_name.slice(1).toLowerCase();
                 console.log(correct_capitalized_small_letter_format_of_medicine_name,"step2")
                 let dict_to_be_sent_to_django={"name_of_medicine_purchased":correct_capitalized_small_letter_format_of_medicine_name,"quantity_of_medicine_purchased":access_quantity_of_medicine_to_be_added.value,"date_of_purchase_of_medicine":access_purchase_date.value,"date_of_manufacturing_of_medicine":access_manufacturing_date.value,"date_of_expiry_date_of_medicine":access_expiry_date.value};
-                let url=" http://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_adding_inventory";
+                let url=" https://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_adding_inventory";
                 let additional_data_to_be_sent_to_django={
                     "method":"POST",
                     "headers":{"Content-Type":"application/json"},
@@ -445,7 +445,7 @@
         heading_tag_h2.innerHTML="Current Inventory";
         heading_tag_h2.style.textAlign="center";
         access_div_table.append(heading_tag_h2);
-        let url="http://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_showing_inventory_table";
+        let url="https://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_showing_inventory_table";
 
         let response=await fetch(url);
         let json_data=await response.json();
@@ -473,7 +473,7 @@
         let target_address_of_where_mouse_clicked=event.target;
         if(target_address_of_where_mouse_clicked.className === "medicine_name"){
             let name_of_medicine_where_user_clicked=target_address_of_where_mouse_clicked.innerHTML;
-            let url="http://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_showing_inventory_table";
+            let url="https://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_showing_inventory_table";
             let response=await fetch(url);
             let json_data=await response.json();
 
@@ -502,7 +502,7 @@
                 let remainder_of_medicine_in_inventory=current_medicine_stock_where_user_clicked_to_sell-number_of_medicines_intended_to_be_sold;
 
                 let dict_number_of_medicine_remaining={"id_of_that_medicine_row":id_of_particular_medicine_where_user_clicked_to_sell,"name_of_medicine_sold":name_of_medicine_to_be_sold,"remainder_medicine":remainder_of_medicine_in_inventory,"quantity_sold":number_of_medicines_intended_to_be_sold};
-                let url="http://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_decreasing_inventory";
+                let url="https://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/request_for_decreasing_inventory";
                 let additional_data_to_be_sent={
                     "method":"POST",
                     "headers":{"Content-Type":"application/json"},
@@ -532,7 +532,7 @@
             let name_of_medicine_discarded=list_of_all_td_in_parent_trow[1].innerHTML
 
             let dict_medicine_to_be_deleted={"id_of_medicine_batch_to_be_discarded":id_of_medicine_where_user_clicked,"name_medicine":name_of_medicine_discarded};
-            let url="http://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/discard_medicine_inventory";
+            let url="https://a8d83af2-e9b4-4818-a8a7-819c5abece10-00-2fuaq9txk7ttn.pike.replit.dev/discard_medicine_inventory";
             let additional_to_be_sent={
                 "method":"POST",
                 "headers":{"Content-Type":"application/json"},
